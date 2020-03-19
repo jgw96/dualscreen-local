@@ -11,12 +11,22 @@
   margin-top: 1em;
 }
 
+#mainSearch input {
+  border-radius: 22px;
+}
+
 #mobileSearch {
   display: none;
 }
 
-ion-card {
-  border-radius: 8px;
+#mainList ion-card {
+  box-shadow: none;
+  --background: #f5f5f5;
+  border-radius: 6px;
+}
+
+#mainList ion-card ion-item {
+  --background: #f5f5f5;
 }
 
 ion-card-title {
@@ -25,6 +35,25 @@ ion-card-title {
 
 #graphic {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  #mainList {
+    background: transparent;
+  }
+
+  #mainList ion-card {
+    border: none;
+    --background: var(--ion-color-light);
+  }
+
+  #mainList ion-card ion-item {
+    --background: initial;
+  }
+
+  #mainSearch {
+    --background: var(--ion-color-light);
+  }
 }
 
 @media (min-width: 1300px) {

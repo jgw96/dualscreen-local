@@ -107,7 +107,42 @@ export class AppHome {
                   </ion-item>
                 </ion-card>
               )
-            }) : null
+            }) :
+              (() => {
+                return [
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-title>Loading...</ion-card-title>
+                      <ion-card-subtitle><ion-skeleton-screen></ion-skeleton-screen></ion-card-subtitle>
+
+                      <ion-item>
+
+                      </ion-item>
+                    </ion-card-header>
+                  </ion-card>,
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-title>Loading...</ion-card-title>
+                      <ion-card-subtitle><ion-skeleton-screen></ion-skeleton-screen></ion-card-subtitle>
+
+                      <ion-item>
+
+                      </ion-item>
+                    </ion-card-header>
+                  </ion-card>,
+                  <ion-card>
+                    <ion-card-header>
+                      <ion-card-title>Loading...</ion-card-title>
+                      <ion-card-subtitle><ion-skeleton-screen></ion-skeleton-screen></ion-card-subtitle>
+
+                      <ion-item>
+
+                      </ion-item>
+                    </ion-card-header>
+                  </ion-card>
+                ]
+
+              })()
           }
         </ion-list>
       </ion-content>
