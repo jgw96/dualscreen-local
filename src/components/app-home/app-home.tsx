@@ -2,6 +2,8 @@ import { Component, h, State } from '@stencil/core';
 import { search } from '../../services/api';
 import { modalController } from '@ionic/core';
 
+import '@pwabuilder/pwainstall';
+
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css'
@@ -57,6 +59,16 @@ export class AppHome {
     }
   }
 
+  async share(place) {
+    if ((navigator as any).share) {
+      await (navigator as any).share({
+        title: place.name,
+        text: `Check out ${place.name} at ${place.address.streetAddress}`,
+        url: place.url,
+      })
+    }
+  }
+
   render() {
     return [
       <ion-header>
@@ -94,7 +106,7 @@ export class AppHome {
 
                   <ion-item>
                     <ion-buttons slot="end">
-                      <ion-button color="secondary">
+                      <ion-button onClick={() => this.share(place)} color="secondary">
                         <ion-icon slot="start" name="share-outline"></ion-icon>
                           Share
                       </ion-button>
@@ -145,6 +157,8 @@ export class AppHome {
               })()
           }
         </ion-list>
+
+        <pwa-install>Install LocalSearch</pwa-install>
       </ion-content>
     ];
   }

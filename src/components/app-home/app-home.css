@@ -5,6 +5,19 @@
   margin-right: 8em;
 }
 
+pwa-install {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+pwa-install::part(openButton) {
+  border-radius: 22px;
+  padding-left: 1em;
+  padding-right: 1em;
+  background: #386dbf;
+}
+
 #mainSearch {
   width: 22em;
   margin-left: 8em;

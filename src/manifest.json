@@ -1,6 +1,7 @@
 {
-  "name": "local-search",
-  "short_name": "local-search",
+  "name": "LocalSearch",
+  "short_name": "LocalSearch",
+  "description": "Search local businesses and help support your community!",
   "start_url": "/",
   "display": "standalone",
   "icons": [{

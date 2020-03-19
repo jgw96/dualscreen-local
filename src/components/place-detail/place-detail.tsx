@@ -31,6 +31,16 @@ export class PlaceDetail {
     await modalController.dismiss();
   }
 
+  async share(place) {
+    if ((navigator as any).share) {
+      await (navigator as any).share({
+        title: place.name,
+        text: `Check out ${place.name} at ${place.address.streetAddress}`,
+        url: place.url,
+      })
+    }
+  }
+
   render() {
     return [
       <ion-header>
@@ -59,7 +69,7 @@ export class PlaceDetail {
               Navigate
             </ion-button>
 
-            <ion-button color="secondary" fill="outline">
+            <ion-button onClick={() => this.share(this.place)} color="secondary" fill="outline">
               <ion-icon slot="start" name="share-outline"></ion-icon>
               Share
             </ion-button>
